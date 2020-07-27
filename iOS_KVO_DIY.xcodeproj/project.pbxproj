@@ -95,6 +95,7 @@
 		F5AB26D324CE5F8D00B5F7CE = {
 			isa = PBXGroup;
 			children = (
+				F5AB271E24CE625700B5F7CE /* README.md */,
 				F5AB26DE24CE5F8D00B5F7CE /* iOS_KVO_DIY */,
 				F5AB26FA24CE5F8F00B5F7CE /* iOS_KVO_DIYTests */,
 				F5AB270524CE5F8F00B5F7CE /* iOS_KVO_DIYUITests */,
@@ -127,7 +128,6 @@
 				F5AB26ED24CE5F8F00B5F7CE /* LaunchScreen.storyboard */,
 				F5AB26F024CE5F8F00B5F7CE /* Info.plist */,
 				F5AB26F124CE5F8F00B5F7CE /* main.m */,
-				F5AB271E24CE625700B5F7CE /* README.md */,
 			);
 			path = iOS_KVO_DIY;
 			sourceTree = "<group>";
