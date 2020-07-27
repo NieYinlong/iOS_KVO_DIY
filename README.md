@@ -16,7 +16,7 @@ KVO是基于```runtime```机制实现的，运用了一个```isa-swizzling```技
 # 开始手动实现KVO
 ##### 1. 创建一个```MyPerson```类, 定义一个```name```属性,
 ##### 2. 创建一个```NSKVONotifying_MyPerson```类继承自```MyPerson```, 然后重写父类的```setName```方法, 监听的值改变时, 回调通知观察者
-```swift
+```Objective-C
 - (void)setName:(NSString *)name
 {
     [super setName:name];
@@ -36,7 +36,7 @@ KVO是基于```runtime```机制实现的，运用了一个```isa-swizzling```技
 }
 ```
 ##### 3.创建```NSObject+KVO```分类,  添加```nyl_addObserver...```方法, 使用当前对象的isa指向新的派生类, 就会调用派生类的set方法
-```swift
+```Objective-C
 //
 //  NSObject+KVO.m
 //  手动实现KVO
@@ -91,16 +91,16 @@ KVO是基于```runtime```机制实现的，运用了一个```isa-swizzling```技
 
 ##### 4 使用
 添加观察者
-```swift
+```Objective-C
  [self.person nyl_addObserver:self forKeyPath:@"name" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
 ```
 改变self.person.name的值
-```swift
+```Objective-C
 self.person.name = @"张飞";
 ```
 
 观察回调方法
-```swift
+```Objective-C
 - (void)nyl_observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
     NSLog(@"change = %@", change); // change = {new = "张飞";}
