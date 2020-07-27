@@ -45,6 +45,7 @@
 {
     NSLog(@"change = %@", change);
     self.nameLabel.text = change[@"new"];
+    NSLog(@"");
 }
 
 
